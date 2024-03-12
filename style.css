@@ -1,0 +1,39 @@
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,em,img,strong,form,label,header { 
+    margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;
+}
+
+html,body {
+    height: 100vh;
+}
+
+body { 
+    line-height: 1;
+    display: flex;
+}
+
+.placeholder-bars {
+    flex: 15%;
+    background-color: rgb(20, 20, 20);
+}
+
+.sidebar {
+    flex: 24%;
+    background-color: aquamarine;
+}
+
+.content {
+    flex: 42%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex: 35%;
+    background-color: antiquewhite;
+
+}
+
+form {
+    flex: 65%;
+    background-color: whitesmoke;
+}
