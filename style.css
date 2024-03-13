@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'logo';
+    src: url('fonts/logo/waterline-webfont.woff2') format('woff2');
+    src: url('fonts/logo/waterline-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,em,img,strong,form,label,header { 
     margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;
 }
@@ -18,7 +26,42 @@ body {
 
 .sidebar {
     flex: 24%;
-    background-color: aquamarine;
+    background: url(images/background.png);
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-content {
+    padding-right: 10px;
+    height: 145px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 275px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font: 8em 'logo';
+    word-spacing: -0.27em;;
+}
+
+.logo-img{
+    width: 120px;
+}
+
+.img-credit {
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: 15px;
+    color: white;
+    align-self: center;
+}
+
+a:visited, 
+a:active, 
+a:link {
+    color: white;
 }
 
 .content {
@@ -27,13 +70,23 @@ body {
     flex-direction: column;
 }
 
-header {
+.describe {
     flex: 35%;
-    background-color: antiquewhite;
-
+    background-color: rgb(240, 241, 243);
 }
 
 form {
-    flex: 65%;
-    background-color: whitesmoke;
+    flex: 64%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs-field {
+    flex: 46%;
+
+}
+
+.button-field {
+    background-color: rgb(240, 241, 243);
+    flex: 55%;
 }
