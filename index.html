@@ -91,12 +91,16 @@
             if (input.value !== confirm.value) {
                 span.textContent = '* Passwords do not match';
                 input.classList.add('error');
+                input.classList.remove('pass-valid');
                 confirm.classList.add('error');
+                confirm.classList.remove('pass-valid');
             }
              else {
                 span.textContent = '';
                 input.classList.remove('error');
+                input.classList.add('pass-valid');
                 confirm.classList.remove('error');
+                confirm.classList.add('pass-valid');
             }
         }
 
