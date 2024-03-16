@@ -27,8 +27,8 @@ body {
 
 .sidebar {
     flex: 24%;
-    background: url(images/background.png);
-    background-size: 100%;
+    background: url(images/background.png) no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
 }
@@ -45,6 +45,8 @@ body {
     color: white;
     font: 8em 'logo';
     word-spacing: -0.27em;;
+    line-height: 0.5;
+
 }
 
 .logo-img{
@@ -134,18 +136,17 @@ input {
     padding: 5px;
     border: 1px solid #D6D9DC;
     border-radius: 5px;
-
 }
 
 input:focus {
     outline: 1px solid blue;
+    border: 1px solid white;
     box-shadow: 1px 3px 10px 0px rgba(0,0,0,0.25);
 }
 
 .button-field {
     background-color: rgb(246, 248, 250);
     flex: 55%;
-
 }
 
 .submit-btn {
@@ -186,4 +187,24 @@ button:active {
 .login:active, 
 .login:link {
     color: #748f86;
+}
+
+.error-span {
+    color: palevioletred;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.error {
+    border: 1px solid palevioletred;
+    /* outline: 1px solid palevioletred; */
+    color: palevioletred;
+}
+
+.pass-valid:valid {
+    border: 1px solid #748f86;
+}
+
+.pass-valid:focus {
+    border: 1px solid white;
 }

@@ -40,20 +40,21 @@
                                     <input id="last-name" name="surname" type="text">
                                 </div>
                                 <div class="inputs">
-                                    <label for="email">EMAIL</label>
-                                    <input id="email" name="email" type="email">
+                                    <label for="email">*EMAIL</label>
+                                    <input class="pass-valid" id="email" name="email" type="email" required>
                                 </div>
                                 <div class="inputs">
                                     <label for="phone-number">PHONE NUMBER</label>
                                     <input id="phone-number" name="phone" type="text">
                                 </div>
                                 <div class="inputs">
-                                    <label for="password">PASSWORD</label>
-                                    <input id="password" name="password" type="password">
+                                    <label for="password">*PASSWORD</label>
+                                    <input class="pass-valid" id="password" name="password" type="password" required>
+                                    <span class="error-span"></span>
                                 </div>
                                 <div class="inputs">
-                                    <label for="confirm-password">CONFIRM PASSWORD</label>
-                                    <input id="confirm-password" name="confirm" type="password">
+                                    <label for="confirm-password">*CONFIRM PASSWORD</label>
+                                    <input class="pass-valid" id="confirm-password" name="confirm" type="password" required>
                                 </div>
                         </div>
                     </div>
@@ -69,5 +70,36 @@
     </div>
 
     <div class="placeholder-bars"></div>
+
+    <script>
+        let inputPass = document.querySelector('#password');
+        let inputConfirm = document.querySelector('#confirm-password');
+        let span = document.querySelector('.error-span');
+        let button = document.querySelector('.submit-btn');
+
+        button.addEventListener('click', (e) => {
+            if (inputPass.className == 'error' || inputConfirm.className == 'error') {
+                e.preventDefault();
+        }
+        });
+
+        inputPass.oninput = () => validate(inputPass, inputConfirm);
+
+        inputConfirm.oninput = () => validate(inputPass, inputConfirm);
+        
+        function validate(input, confirm) {
+            if (input.value !== confirm.value) {
+                span.textContent = '* Passwords do not match';
+                input.classList.add('error');
+                confirm.classList.add('error');
+            }
+             else {
+                span.textContent = '';
+                input.classList.remove('error');
+                confirm.classList.remove('error');
+            }
+        }
+
+    </script>
 </body>
 </html>
